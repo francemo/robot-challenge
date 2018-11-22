@@ -1,0 +1,27 @@
+
+<% include ./partials/header%>
+
+
+<div class="row">
+    <h3 style="text-align: center">Search in Webster's Unabridged English Dictionary</h3>
+    <div style="width: 50%; margin: 25px auto; text-align: center">
+        <% if(notFound === true){%>
+            <p>"<%= targetTerm%>" is not found. A close word is :</p>
+        <% } %>
+        <% if(word) {%>
+        
+            <h1><%= word.currentTerm%></h1>
+            
+            <p><%= word.currentTermDefinition%></p>
+            
+            <a href='/search'>Search another word</a>
+        
+        <% } else { %>
+            <a href='/search'>Search your word</a>
+        <% } %>
+        
+    </div>
+  
+</div>
+
+<% include ./partials/footer%>

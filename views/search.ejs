@@ -1,0 +1,37 @@
+<% include ./partials/header%>
+
+
+<div class="row">
+    <h3 style="text-align: center">Search in Webster's Unabridged English Dictionary</h3>
+    <div style="width: 30%; margin: 25px auto;">
+        <form id="searchForm" action="/", method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="type your word" name="word">
+            </div>
+
+            <div id="submitButton" class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Search</button>
+            </div>            
+        </form>  
+        
+        <div class="spinner" style="display: none;">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+        
+        <script type="text/javascript">
+        $(document).ready(function() { 
+            $("#searchForm").submit(function(e) {
+                $("#submitButton").hide();
+                $(".spinner").show();
+            });
+        });
+        </script>
+    </div>
+  
+</div>
+
+<% include ./partials/footer%>
